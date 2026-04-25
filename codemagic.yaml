@@ -9,15 +9,19 @@ workflows:
     scripts:
       - name: Set up dependencies
         script: flutter pub get
-      - name: Build iOS (No Sign)
+      - name: Build iOS
         script: |
-          # Build for simulator first (easiest to get artifact)
+          # Build for simulator
           flutter build ios --simulator --debug
-          # Try to build for device (might fail at signing but we capture the .app)
+          # Build for device (no sign)
           flutter build ios --debug --no-codesign || true
+      - name: Post-build Zip
+        script: |
+          mkdir -p final_builds
+          zip -r final_builds/ios_simulator.zip build/ios/iphonesimulator/*.app || true
+          zip -r final_builds/ios_device.zip build/ios/iphoneos/*.app || true
     artifacts:
-      - build/ios/iphonesimulator/*.app
-      - build/ios/iphoneos/*.app
+      - final_builds/*.zip
       - build/ios/ipa/*.ipa
 
   android-workflow:
