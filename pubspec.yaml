@@ -37,6 +37,10 @@ flutter:
   assets:
     - assets/logo.png
 
+dependency_overrides:
+  win32: ^6.1.0
+  web: ^1.1.0
+
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
