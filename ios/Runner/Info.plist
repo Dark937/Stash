@@ -66,5 +66,34 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+
+	<!-- Permissions for Pickers -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Stash needs access to your photos to let you attach images to your notes.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Stash needs access to your camera to let you take photos for your notes.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Stash needs access to your microphone to capture video.</string>
+
+	<!-- URL Launcher Configuration -->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>https</string>
+		<string>http</string>
+		<string>youtube</string>
+	</array>
+
+	<!-- Sharing Intent Configuration -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>SharePhotos</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
