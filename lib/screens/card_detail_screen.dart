@@ -107,7 +107,9 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
     if (!_card.content.contains(_card.title)) {
       textToShare = "${_card.title}\n\n${_card.content}";
     }
-    Share.share(textToShare);
+    SharePlus.instance.share(
+      ShareParams(text: textToShare),
+    );
   }
 
   void _addTag() {

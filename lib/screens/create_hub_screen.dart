@@ -73,7 +73,7 @@ class _CreateHubScreenState extends State<CreateHubScreen> {
   }
 
   Future<void> _pickFile() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    FilePickerResult? result = await FilePicker.pickFiles();
     if (result != null) {
       setState(() {
         _attachedFilePath = result.files.single.path;
